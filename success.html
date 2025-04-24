@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Facebook</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .box {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .fb {
+      color: #1877f2;
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .msg {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="fb">facebook</div>
+    <div class="msg">Welcome, <span id="usernameDisplay">User</span> 👋</div>
+    <div class="sub">You have successfully logged in.<br></div>
+  </div>
+
+  <script>
+    // Show stored username from fake login
+    const user = localStorage.getItem("fb_username") || "User";
+    document.getElementById("usernameDisplay").innerText = user;
+
+    // Try auto-close after 7 seconds (will work only if opened via window.open)
+    setTimeout(() => {
+      window.close();
+    }, 7000);
+  </script>
+
+</body>
+</html>

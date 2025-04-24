@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #fafafa;
+      color: #262626;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .logo img {
+      width: 180px;
+      margin-bottom: 30px;
+    }
+
+    .message {
+      font-size: 18px;
+      font-weight: 500;
+      color: #2c2c2c;
+    }
+
+    .subtext {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="logo.png" alt="Instagram Logo">
+  </div>
+
+  <div class="message">You have successfully logged in to Instagram.</div>
+  <div class="subtext">you can close this tab.</div>
+
+  <script>
+    setTimeout(() => {
+      window.close();
+    }, 7000); // Close after 7 seconds
+  </script>
+
+</body>
+</html>

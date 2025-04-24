@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InstaBot AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gradient-light: linear-gradient(120deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      --text-light: #111;
+      --text-dark: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-light);
+      overflow-x: hidden;
+      background: #fefefe;
+    }
+
+    /* Animated Background */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 200%;
+      height: 200%;
+      background: var(--gradient-light);
+      background-size: 400% 400%;
+      animation: moveBG 15s ease infinite;
+      filter: blur(80px);
+      opacity: 0.5;
+    }
+
+    @keyframes moveBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 2;
+    }
+
+    .main {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .main h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+      background: var(--gradient-light);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
+    }
+
+    .main p {
+      font-size: 18px;
+      color: #333;
+      max-width: 500px;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 16px 36px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 40px;
+      color: #fff;
+      background: var(--gradient-light);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 60px;
+      justify-content: center;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 240px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-card h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      color: #e7e4e4;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #999;
+      margin-top: 80px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #111;
+        color: var(--text-dark);
+      }
+
+      .main p, .feature-card p {
+        color: #aaa;
+      }
+
+      .feature-card {
+        background: #1a1a1a;
+      }
+
+      header {
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main h1 {
+        font-size: 30px;
+      }
+
+      .feature-card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-animation"></div>
+
+  <header>InstaBot AI</header>
+
+  <section class="main">
+    <h1>Boost Your Instagram Power</h1>
+    <p>DMs on autopilot, growth on cruise, you just vibe. Connect your IG & let AI take over </p>
+    <button class="btn" onclick="window.location.href='index.html'">Get Now</button>
+
+    <div class="features">
+      <div class="feature-card">
+        <h3>Auto Replies</h3>
+        <p>Smart auto-responses to DMs & comments using trained AI.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Growth Insights</h3>
+        <p>See who follows, unfollows, and track engagement growth daily.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Chatbot Mode</h3>
+        <p>Turn your Insta into a 24/7 bot — perfect for businesses & creators.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 InstaBot AI. All rights reserved.
+  </footer>
+
+</body>
+</html>
